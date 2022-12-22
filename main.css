@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* CSS RESET */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form, label, input, button, textarea {
+    font: inherit;
+}
+
+/* UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.lineheight {
+    line-height: 1.5;
+}
+
+/* GENERAL STYLES */
+
+html {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 80vw;
+    min-height: 100%;
+    box-shadow: 2px 0px 20px black;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1px, 3vw, 20px);
+}
+
+h1, h2, h3 {
+    font-family: 'Fugaz One', cursive;
+    letter-spacing: 0.05em;
+    color: rgb(4, 164, 4);
+}
+
+footer, header h1 {
+    background-color: black;
+    color: whitesmoke;
+    z-index: 1;
+    display: grid;
+    place-content: center;
+}
+
+header h1 {
+    font-size: clamp(1px, 7vw, 50px);
+    font-weight: 1000;
+    width: 100%;
+    height: 1.75em;
+    position: sticky;
+    top: 0;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    padding: 0.7em;
+}
+
+h2 {
+    font-size: clamp(1px, 5.5vw, 35px);
+}
+
+h3 {
+    font-size: clamp(1px, 5vw, 30px);
+}
+
+section h2, main {
+    padding: 1vh 2vw;
+}
+
+nav {
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 2px black;
+    border: 1px solid black;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    letter-spacing: 0.02em;
+    padding: 1vh 0px;
+}
+
+nav a:any-link {
+    text-decoration: none;
+    color: black;
+}
+
+main a:any-link {
+    color: black;
+}
+
+nav :is(a:hover, a:focus), main :is(a:hover, a:focus) {
+    color: rgba(0, 0, 0, 0.5)
+}
+
+nav a:active, main a:active {
+    color: rgb(4, 164, 4);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 5em;
+}
+
+thead, tbody, tfoot, tr {
+    display: contents;
+}
+
+/* HOME */
+
+section {
+    position: relative;
+}
+
+section h2 {
+    background-color: rgb(4, 164, 4, 0.7);
+    color:  whitesmoke;
+    position: absolute;
+    text-shadow: 2px 2px 5px black; 
+    top: 0.9em;
+    left: 1em;
+    animation: welcome 1s forwards;
+}
+
+@keyframes welcome{
+    0% {
+        top: -50em;
+        transform: scaleY(0);
+        transform: skew(-15deg, -5deg);
+    }
+
+    80% {
+        top: 1.5em;
+        transform: scaleY(1.2);
+        transform: skew(-15deg, -5deg);
+    }
+
+    100% {
+        top: 0.9em;
+        transform: scaleY(1);
+        transform: skew(-15deg, -5deg);
+    }
+}
+
+/* MENU */
+
+tfoot td {
+    border-radius: 0px 0px 10px 10px;
+    grid-area: c;
+    color: green;
+}
+
+.tbody__cr {
+    grid-area: a;
+}
+
+.tbody__sf {
+    grid-area: b;
+}
+
+table {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(8, 3em);
+    gap: 1px;
+    grid-template-areas: 
+    '. . .'
+    'a . .'
+    'a . .'
+    'a . .'
+    'b . .'
+    'b . .'
+    'b . .'
+    'c c c';
+    place-content: center;
+}
+
+th, td {
+    border: 1px black solid;
+    display: grid;
+    place-content: center;
+}
+
+th {
+    color: green;
+}
+
+thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* CONTACT */
+
+.contact__fieldset {
+    border: none;
+}
+
+
+form p {
+    padding: 0.4em 0px;
+ }
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+}
+
+label {
+    font-weight: 800;
+}
+
+input, textarea {
+    border-radius: 0.5em;
+    padding: 0.3em 0.5em; 
+}
+
+button {
+    margin: 0.4em 0px;
+    padding: 0.4em;
+    border-radius: 0.8em;
+    background-color: rgb(4, 164, 4);
+    color: white;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+:hover :is(label, input, textarea) {
+    outline-color: rgb(4, 164, 4);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark){
+
+    body {
+        background-color: black;
+        color: whitesmoke;
+    }
+
+    nav {
+        background-color: rgba(255, 255, 255, 0.137);
+    }
+
+    nav a:any-link, main a:any-link {
+        color: whitesmoke;
+    }
+
+    nav :is(a:hover, a:focus), main :is(a:hover, a:focus){
+        color: #22f522;
+    }
+
+    nav a:active, main a:active {
+        color: rgb(24, 157, 24)
+    }
+
+    section h2 {
+        background-color: #bcc8c4c0;
+    }
+
+    h2, h3, th, td, tfoot td {
+       color: whitesmoke;
+    }
+
+    th, td{
+        border-color: whitesmoke;
+    }
+
+    button {
+        background-color: rgb(104, 104, 104);
+    }
+}

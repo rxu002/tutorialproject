@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" , content="Tiff Xu" />
+    <meta
+      name="description"
+      ,
+      content="Contact Information for The Little Tacos Shop"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌮 Contact Us - LTS</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Little Taco Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./#menu">Menu</a></li>
+          <li><a href="hours.html">Hours</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <figure>
+          <img
+            src="./images/contact_1000x649.png"
+            alt="Tacos Galore"
+            width="1000"
+            height="649"
+          />
+          <figcaption class="offscreen">
+            Come and get these Delicious Tacos
+          </figcaption>
+        </figure>
+      </section>
+    </header>
+
+    <br>
+
+    <main class="lineheight">
+      <article>
+        <h2>Our Location</h2>
+        <br>
+        <address>
+          555 Taco Temptation Lane, Suite T<br>
+          Kansas City, MO 55555-5555
+          <br><br>
+          Phone: <a href="tel:+5555555555">555-555-5555</a>
+        </address>
+      </article>
+      <br>
+      <hr>
+      <br>
+      <article>
+        <h2>Our Contact Form</h2>
+        <form action="https://httpbin.org/get" method="get">
+          <fieldset class="contact__fieldset">
+            <legend class="offscreen">Send Us a Message</legend>
+            <p>
+              <label for="user-name">Name:</label>
+              <input
+                type="text"
+                id="user-name"
+                name="user-name"
+                placeholder="your name"
+                required
+              />
+            </p>
+            <p>
+              <label for="user-email">Email:</label>
+              <input
+                type="email"
+                id="user-email"
+                name="user-email"
+                placeholder="your email"
+                required
+              />
+            </p>
+            <p>
+              <label for="user-message">Your Message:</label>
+              <textarea
+                id="user-message"
+                name="user-message"
+                cols="50"
+                rows="10"
+                placeholder="Type your message here"
+              ></textarea>
+            </p>
+          </fieldset>
+          <button type="submit">Send</button>
+          <button type="reset">Reset</button>
+        </form>
+        <br>
+        <p class="centertext">
+          <a href="#"> Back to Top </a>
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        <span class="nowrap">Copyright &copy;</span>
+        <span class="nowrap"> Little Taco Shop </span>
+      </p>
+    </footer>
+  </body>
+</html>
